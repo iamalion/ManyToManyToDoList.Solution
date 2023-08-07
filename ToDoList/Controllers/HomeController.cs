@@ -18,9 +18,9 @@ namespace ToDoList.Controllers
         _db = db;
       }
       [HttpGet("/")]
-      public Task<ActionResult> Index()
+      public async Task<ActionResult> Index()
       {
-        CCategory[] cats = _db.Categories.ToArray();
+        Category[] cats = _db.Categories.ToArray();
         Dictionary<string,object[]> model = new Dictionary<string, object[]>();
         model.Add("categories", cats);
         string userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

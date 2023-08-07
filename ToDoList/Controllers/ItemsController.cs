@@ -43,7 +43,7 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public Task<ActionResult> Create(Item item, int CategoryId)
+    public async Task<ActionResult> Create(Item item, int CategoryId)
     {
       if (!ModelState.IsValid)
       {
